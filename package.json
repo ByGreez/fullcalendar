@@ -1,7 +1,7 @@
 {
   "name": "fullcalendar",
   "title": "FullCalendar",
-  "version": "2.3.1",
+  "version": "2.3.1a",
   "description": "Full-sized drag & drop event calendar",
   "keywords": [
     "calendar",
@@ -13,7 +13,7 @@
   "bugs": "http://fullcalendar.io/wiki/Reporting-Bugs/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/arshaw/fullcalendar.git"
+    "url": "https://github.com/ByGreez/fullcalendar.git"
   },
   "license": {
     "type": "MIT",

@@ -171,9 +171,21 @@ var BasicView = fcViews.basic = View.extend({
 		return '' +
 			'<td class="' + classes.join(' ') + '" data-date="' + date.format() + '">' +
 				date.date() +
+        this.getDayInCourse(date)+
 			'</td>';
 	},
 
+  getDayInCourse: function(date) {
+    if(typeof this.options.startDate == 'undefined' || typeof this.options.endDate == 'undefined') { return '';}
+    var mydate = date.clone();
+    var startDate = moment(new Date(this.options.startDate)).subtract(1, 'day');
+    var endDate = moment(new Date(this.options.endDate));
+
+    if(mydate.isAfter(startDate) && mydate.isBefore(endDate)){
+      return ' ('+(moment.duration(moment(mydate).diff(startDate))).asDays()+' день курса)';
+    }
+    return '';
+  },
 
 	// Generates an HTML attribute string for setting the width of the week number column, if it is known
 	weekNumberStyleAttr: function() {
