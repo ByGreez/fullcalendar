@@ -1,5 +1,5 @@
 /*!
- * FullCalendar v2.3.1
+ * FullCalendar v2.3.1b
  * Docs & License: http://fullcalendar.io/
  * (c) 2015 Adam Shaw
  */
@@ -18,7 +18,7 @@
 
 ;;
 
-var fc = $.fullCalendar = { version: "2.3.1" };
+var fc = $.fullCalendar = { version: "2.3.1b" };
 var fcViews = fc.views = {};
 
 
@@ -10166,7 +10166,7 @@ var BasicView = fcViews.basic = View.extend({
     if(typeof this.options.startDate == 'undefined' || typeof this.options.endDate == 'undefined') { return '';}
     var mydate = date.clone();
     var startDate = moment(new Date(this.options.startDate)).subtract(1, 'day');
-    var endDate = moment(new Date(this.options.endDate));
+    var endDate = moment(new Date(this.options.endDate)).add(1, 'day');
 
     if(mydate.isAfter(startDate) && mydate.isBefore(endDate)){
       return ' ('+(moment.duration(moment(mydate).diff(startDate))).asDays()+' день курса)';

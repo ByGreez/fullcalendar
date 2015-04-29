@@ -179,7 +179,7 @@ var BasicView = fcViews.basic = View.extend({
     if(typeof this.options.startDate == 'undefined' || typeof this.options.endDate == 'undefined') { return '';}
     var mydate = date.clone();
     var startDate = moment(new Date(this.options.startDate)).subtract(1, 'day');
-    var endDate = moment(new Date(this.options.endDate));
+    var endDate = moment(new Date(this.options.endDate)).add(1, 'day');
 
     if(mydate.isAfter(startDate) && mydate.isBefore(endDate)){
       return ' ('+(moment.duration(moment(mydate).diff(startDate))).asDays()+' день курса)';
